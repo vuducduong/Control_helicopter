@@ -1,4 +1,6 @@
 function component(width, height, color, x, y, type) {
+    this.heli = new Image;
+    this.heli.src = "HELI3.png"
     this.type = type;
     this.score = 0;
     this.width = width;
@@ -11,10 +13,15 @@ function component(width, height, color, x, y, type) {
     this.gravitySpeed = 0;
     this.update = function() {
         ctx = myGameArea.context;
-        if (this.type == "text") {
-            ctx.font = this.width + " " + this.height;
+        this.score++;
+        if (this.type == "image") {
+            ctx.drawImage(this.heli,
+                this.x,
+                this.y,
+                80, 50);
+             ctx.font = this.width + " " + this.height;
             ctx.fillStyle = color;
-            ctx.fillText(this.text, this.x, this.y);
+            ctx.fillText(this.score, this.x, this.y);
         } else {
             ctx.fillStyle = color;
             ctx.fillRect(this.x, this.y, this.width, this.height);
@@ -46,7 +53,9 @@ function component(width, height, color, x, y, type) {
         if ((mybottom < othertop) || (mytop > otherbottom) ||
             (myright < otherleft) || (myleft > otherright)) {
             crash = false;
+
         }
         return crash;
     }
 }
+
