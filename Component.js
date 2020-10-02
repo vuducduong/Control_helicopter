@@ -1,3 +1,4 @@
+
 function component(width, height, color, x, y, type) {
     this.heli = new Image;
     this.heli.src = "HELI3.png"
@@ -18,7 +19,7 @@ function component(width, height, color, x, y, type) {
             ctx.drawImage(this.heli,
                 this.x,
                 this.y,
-                80, 50);
+                60, 60);
              ctx.font = this.width + " " + this.height;
             ctx.fillStyle = color;
             ctx.fillText(this.score, this.x, this.y);

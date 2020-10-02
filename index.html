@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <link rel="stylesheet" href="canvas.css">
     <script src="Component.js"></script>
 </head>
-<body onload="startGame()" background="backgroud.jpg">
+<body onload="startGame()"  background="backgroud.jpg">
+<audio autoplay controls id="music">
+    <source src="Unity%20-%20TheFatRat.mp3" type="audio/mpeg">
+</audio>
 <script>
-
     let myGamePiece;
     let myObstacles = [];
     let myScore;
 
     function startGame() {
-        myGamePiece = new component(50, 50, "HELI3.PNG", 20, 120,"image");
+
+        myGamePiece = new component(50, 60, "HELI3.png", 20, 120,"image");
         myGamePiece.gravity = 0.05;
         myScore = new component("30px", "Consolas", "black", 280, 40, "text");
         myGameArea.start();
@@ -33,8 +36,9 @@
             height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
             minGap = 50;
             maxGap = 50;
+            0;
             gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
-            myObstacles.push(new component(50, x - height - gap, "pink", x, height + gap));
+            myObstacles.push(new component(60, x - height - gap, "pink", x, height + gap));
         }
         for (i = 0; i < myObstacles.length; i += 1) {
             myObstacles[i].x += -1;
@@ -56,7 +60,8 @@
     }
 </script>
 <br>
-<button onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">Jump</button>
+<button  onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">Jump</button>
+<h1>LET CLICK TO PLAY GAME</h1>
 </body>
 <script src="Area.js"></script>
 <script src="Component.js"></script>

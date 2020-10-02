@@ -8,11 +8,13 @@ canvas {
 }
 button {
     position: absolute;
-    top: 500px;
-    left: 550px;
+    top: 420px;
+    left: 650px;
+    color:red;
 }
-p{
+h1{
+    color: midnightblue;
     position: absolute;
-    top: 520px;
-    left: 450px;
+    top: 430px;
+    left: 460px;
 }
